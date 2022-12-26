@@ -1,0 +1,45 @@
+<h1 mat-dialog-title> {{actionBtn}} Product Form </h1>
+<div mat-dialog-content>
+     <form [formGroup]="productForm">
+          <mat-form-field appearance="outline">
+               <mat-label>Product Name</mat-label>
+               <input formControlName="productName" matInput placeholder="product name">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+               <mat-label>Product Category</mat-label>
+               <mat-select formControlName="category" placeholder="Category">
+                    <mat-option value="Fruits">Fruits</mat-option>
+                    <mat-option value="Vegetables">Vegetables</mat-option>
+                    <mat-option value="Meats">Meats</mat-option>
+               </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+               <mat-label>Choose Date</mat-label>
+               <input formControlName="date" matInput [matDatepicker]="picker">
+               <mat-hint>MM/DD/YYYY</mat-hint>
+               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+               <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <label>
+               <h1 mat-dialog-title>Product Freshness</h1>
+               <mat-radio-group formControlName="freshNess" aria-label="Select an option" class="product-radio-group">
+                    <mat-radio-button class="product-radio-button" *ngFor="let fresh of freshList" value="{{fresh}}">
+                         {{fresh}}
+                    </mat-radio-button>
+               </mat-radio-group>
+          </label>
+          <mat-form-field appearance="outline">
+               <mat-label>Price</mat-label>
+               <input formControlName="price" matInput type="number" placeholder="product price">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+               <mat-label>Comment</mat-label>
+               <textarea formControlName="comment" matInput placeholder="product comment"></textarea>
+          </mat-form-field>
+     </form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+     <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+     <button mat-raised-button color="primary" style="margin-left:10px;" (click)="addProduct()">{{actionBtn}}</button>
+</div>

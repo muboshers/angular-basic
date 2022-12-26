@@ -1,0 +1,23 @@
+{
+  "productList": [
+    {
+      "productName": "Apple",
+      "category": "Fruits",
+      "freshNess": "New Brand",
+      "price": 100,
+      "comment": "That is usefull apple company like a mac os",
+      "date": "2022-10-08T19:00:00.000Z",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
